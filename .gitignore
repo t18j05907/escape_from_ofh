@@ -1,0 +1,5 @@
+#.spyprojectを無視する
+.spyproject/
+
+#__pycache__を無視する
+__pycache__
