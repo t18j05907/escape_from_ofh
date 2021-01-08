@@ -11,7 +11,7 @@ from room_base import Room_Base
 class Livingroom(Room_Base):
     def __init__(self, screen, lock_flag):
         super().__init__(screen, lock_flag)
-        self.img_room = pygame.image.load("res/livingroom/living.png")
+        self.img_room = pygame.image.load("res/livingroom/living_complete.png")
         
     def click_event(self, x, y):
         pass
