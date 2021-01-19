@@ -9,8 +9,8 @@ import pygame
 from room_base import Room_Base
 
 class Hall(Room_Base):
-    def __init__(self, screen, lock_flag):
-        super().__init__(screen, lock_flag)
+    def __init__(self, screen, lock_flag, item_get, item_use):
+        super().__init__(screen, lock_flag, item_get, item_use)
         self.img_room = pygame.image.load("res/hall/hall_sol.png")
         self.img_daruma = pygame.image.load("res/hall/item_daruma.png")
         self.img_karender = pygame.image.load("res/hall/item_karender.png")

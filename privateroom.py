@@ -9,8 +9,8 @@ import pygame
 from room_base import Room_Base
 
 class Privateroom(Room_Base):
-    def __init__(self, screen, lock_flag):
-        super().__init__(screen, lock_flag)
+    def __init__(self, screen, lock_flag, item_get, item_use):
+        super().__init__(screen, lock_flag, item_get, item_use)
         self.img_room = pygame.image.load("res/privateroom/perfect_solution_pr.png")
         self.img_shelf = pygame.image.load("res/privateroom/shelf.png")
         self.img_wallpaper = pygame.image.load("res/privateroom/wallpaper.png")
