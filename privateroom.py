@@ -42,3 +42,7 @@ class Privateroom(Room_Base):
             
         if self.speaker == False:
             self.screen.blit(self.img_speaker, [471,751])
+            
+            
+    def next_state(self):
+        return 2

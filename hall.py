@@ -31,4 +31,8 @@ class Hall(Room_Base):
             self.screen.blit(self.img_daruma, [1075,399])
             
         if self.karender == False:
-            self.screen.blit(self.img_karender, [422,315])    
+            self.screen.blit(self.img_karender, [422,315]) 
+            
+            
+    def next_state(self):
+        return 0
