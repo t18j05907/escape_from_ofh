@@ -11,6 +11,7 @@ from hall import Hall
 from livingroom import Livingroom
 from privateroom import Privateroom
 from item_base import Item_Base
+from ending import Ending
 
 
 def main():
@@ -27,9 +28,11 @@ def main():
     item_ctrl = Item_Base(screen, item_get, item_use, width, height)
     
     room_state = 0
+    next_room_state = 0
     room_ctrl = [Hall(screen, lock_flag, item_get, item_use),
                  Livingroom(screen, lock_flag, item_get, item_use),
-                 Privateroom(screen, lock_flag, item_get, item_use)]
+                 Privateroom(screen, lock_flag, item_get, item_use),
+                 Ending(screen, lock_flag, item_get, item_use)]
     
     while True:
 
@@ -88,6 +91,33 @@ def main():
         item_ctrl.draw()
         pygame.display.update()
         
+        """ 部屋移動 """
+        next_room_state = room_ctrl[room_state].next_state()
+        if room_state != next_room_state:
+            surface = pygame.Surface((width, height), pygame.SRCALPHA)
+            alpha = 0
+            for i in range(12):
+                screen.fill((0,0,0))
+                surface.fill((0, 0, 0, alpha))
+                room_ctrl[room_state].draw()
+                item_ctrl.do()
+                item_ctrl.draw()
+                screen.blit(surface, (0, 0))
+                pygame.display.update()
+                clock.tick(30)
+                alpha = alpha + 20
+            room_state = next_room_state
+            for i in range(12):
+                screen.fill((0,0,0))
+                surface.fill((0, 0, 0, alpha))
+                room_ctrl[room_state].draw()
+                item_ctrl.do()
+                item_ctrl.draw()
+                screen.blit(surface, (0, 0))
+                pygame.display.update()
+                clock.tick(30)
+                alpha = alpha - 20
+                
         clock.tick(30)
         
         
