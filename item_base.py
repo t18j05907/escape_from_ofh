@@ -9,10 +9,10 @@ import pygame
 
 class Item_Base:
     def __init__(self, screen, item_get, item_use, w, h):
-        self.img_item = [pygame.image.load("res/common/item_speaker.png"),
-                         pygame.image.load("res/common/item_daruma.png"),
+        self.img_item = [pygame.image.load("res/common/item_daruma.png"),
+                         pygame.image.load("res/common/item_karender.png"),
                          pygame.image.load("res/common/item_key.png"),
-                         pygame.image.load("res/common/item_karender.png")]
+                         pygame.image.load("res/common/item_speaker.png")]
         self.screen = screen
         self.item_get = item_get
         self.item_use = item_use

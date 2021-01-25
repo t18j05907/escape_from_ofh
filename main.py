@@ -13,15 +13,14 @@ from privateroom import Privateroom
 from item_base import Item_Base
 from ending import Ending
 
-
 def main():
-    width = 1280
-    height = 1024
+    width = 1024
+    height = 768
     pygame.init()
     screen = pygame.display.set_mode((width + 80, height))
     clock = pygame.time.Clock()
     
-    lock_flag = [False, False, False, False, False, False]
+    lock_flag = [False, False, False]
     
     item_get = [False, False, False, False]
     item_use = [False, False, False, False]
@@ -33,7 +32,7 @@ def main():
                  Livingroom(screen, lock_flag, item_get, item_use),
                  Privateroom(screen, lock_flag, item_get, item_use),
                  Ending(screen, lock_flag, item_get, item_use)]
-    
+
     while True:
 
         """ マウスカーソル位置 """
@@ -58,12 +57,6 @@ def main():
                     lock_flag[1] = not lock_flag[1]
                 elif event.key == pygame.K_c:
                     lock_flag[2] = not lock_flag[2]
-                elif event.key == pygame.K_d:
-                    lock_flag[3] = not lock_flag[3]
-                elif event.key == pygame.K_e:
-                    lock_flag[4] = not lock_flag[4]
-                elif event.key == pygame.K_f:
-                    lock_flag[5] = not lock_flag[5]
                 elif event.key == pygame.K_0:
                     item_get[0] = not item_get[0]
                     item_use[0] = False
@@ -117,7 +110,8 @@ def main():
                 pygame.display.update()
                 clock.tick(30)
                 alpha = alpha - 20
-                
+    
+    
         clock.tick(30)
         
         

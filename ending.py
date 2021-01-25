@@ -4,6 +4,8 @@ Created on Wed Dec  9 10:23:51 2020
 
 @author: Ozaki
 """
+
+import pygame
 from room_base import Room_Base
 
 class Ending(Room_Base):
@@ -12,6 +14,8 @@ class Ending(Room_Base):
         self.lock_flag = lock_flag
         self.item_get = item_get
         self.item_use = item_use
+        self.img_escape = pygame.image.load("res/privateroom/escape_pr.png")
+        self.next_room = 3
     
     
     def pos_event(self, x, y):
@@ -35,4 +39,5 @@ class Ending(Room_Base):
     
     
     def draw(self):
-        pass
+        if self.lock_flag[1] == True:
+           self.screen.blit(self.img_escape, [0, 0])
