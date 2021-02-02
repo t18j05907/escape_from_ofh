@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['room_base.py', 'livingroom.py', 'password_input.py', 'item_base.py', 'hall.py', 'privateroom.py', 'ending.py', 'main.py', 'living_room.py', '..\\Desktop\\tomy-python\\eng_office\\office1.py', '..\\Desktop\\tomy-python\\eng_office\\ending.py', '..\\Desktop\\tomy-python\\eng_office\\elevator.py']
+recent_files = ['room_base.py', 'livingroom.py', 'password_input.py', 'item_base.py', 'hall.py', 'privateroom.py', 'ending.py', 'main.py', '..\\Desktop\\tomy-python\\eng_office\\office1.py', '..\\Desktop\\tomy-python\\eng_office\\ending.py', '..\\Desktop\\tomy-python\\eng_office\\elevator.py']
 

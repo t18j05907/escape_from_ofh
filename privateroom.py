@@ -17,8 +17,10 @@ class Privateroom(Room_Base):
         self.img_speaker = pygame.image.load("res/privateroom/speaker.png")
         self.img_rightarrow = pygame.image.load("res/privateroom/right_arrow.png")
         self.img_underarrow = pygame.image.load("res/privateroom/under_arrow.png")
+        self.img_hint_shelf = pygame.image.load("res/privateroom/hint_shelf.png")
         self.img_gameover = pygame.image.load("res/privateroom/game_over.png")
         self.shelf = False
+        self.hint_shelf = False
         self.wallpaper = False
         self.speaker = False
         self.gameover = False
@@ -64,6 +66,13 @@ class Privateroom(Room_Base):
             self.item_get[2] = False
             self.item_get[3] = False
             self.gameover = True
+            
+        #机の上にあるヒントをクリックすると拡大表示
+        if 662 < x < 677 and 571 < y < 580:
+            self.hint_shelf = True
+            
+        elif self.hint_shelf == True and not (662 < x < 677 and 571 < y < 580):
+            self.hint_shelf = False
         
         #部屋移動
         #hallへ
@@ -90,6 +99,9 @@ class Privateroom(Room_Base):
         #スピーカーを表示    
         if self.speaker == False:
             self.screen.blit(self.img_speaker, [375,563])
+        #ヒントを拡大表示
+        if self.hint_shelf == True:
+            self.screen.blit(self.img_hint_shelf, [408,411])
         #ゲームオーバーの画像を表示    
         if self.gameover == True:
             self.screen.blit(self.img_gameover, [0, 0])
